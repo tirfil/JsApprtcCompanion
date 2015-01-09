@@ -13,6 +13,7 @@ This server manages room number and allow to simplify connections between call p
 Need to use a browser compatible with webRTC.
 
 > npm install
+
 > node server.js (or nodejs server.js)
 
 
