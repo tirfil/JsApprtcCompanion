@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<META HTTP-EQUIV="refresh" CONTENT="30; URL=/list?name=<%= name %>&room=<%= room%>">
+<html>
+<script>
+function connect(room)
+{
+    parent.frames[1].location.href = "https://apprtc.appspot.com/room/" + room;
+    window.document.location ="/list?name=<%= name %>&room=" + room;
+}
+function disconnect()
+{
+    window.document.location ="/list?name=<%= name %>&room=0"
+    parent.location.href="/";
+}
+
+
+var room = <%= room %>;
+if (room == "0")
+{
+    var rand = Math.floor(Math.random()*9000000 + 1000000);
+    parent.frames[1].location.href = "https://apprtc.appspot.com/r/" + rand.toString();
+    window.document.location ="/list?name=<%= name %>&room=" + rand.toString();
+}
+</script>
+<body>
+<p><%= name %> - <%= room %></p>
+<fieldset>
+<legend>Online:</legend>
+<form> 
+<%
+var size = names.length;
+var room1;
+for (var i=0; i<size; ++i)
+{
+    var item = names[i];
+    room1 = rooms[i];
+    if (item != name){	
+%> 
+<input type="button" value="<%= item %>" onclick="connect(<%= room1%>);">
+<br>
+<%
+    };
+};  
+%>
+</form>
+</fieldset>
+<br><br>
+<form>
+<input type="button" value="Disconnect me" onclick="disconnect();">
+</form>
+</body>
+</html>
+
