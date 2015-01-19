@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-<p> Registration </p>
+<div id="displayform" style="visibility:hidden" >
+<h1> Connection </h1>
 <br>
+
 
 <form action="/start" method="POST">
 <fieldset>
-Your name:<br>
+Please, enter your name:<br>
 <input type="text" name="name"><br>
-Password:<br>
-<input type="password" name="pass"><br><br>
-<input type="submit" value="Submit">
+<br>
+<input type="submit" value="Continue >">
 <br>
 </form>
 </fieldset>
+<br><br><br>
+</div>
+
+<script>
+if (navigator.webkitGetUserMedia || navigator.mozGetUserMedia)  
+{  
+        //document.write("<p>Our browser supports webRTC</p>"); 
+        var node = document.getElementById("displayform");
+        node.style.visibility="visible";
+        node.style.height="auto";
+}  
+else  
+{  
+        var node = document.getElementById("displayform");
+        node.style.height="0";
+        document.write("<h1>Our borwser <b>doesn't</b> support WebRTC technology.</h1>");
+        document.write("<h1>So, you cannot use this application.</h1>");
+        document.write('<p><a href="http://caniuse.com/rtcpeerconnection">To show browsers compatibles with WebRTC technology</a></p>');
+}  
+</script>
+
+<p>Is your browser supporting WebRTC ?: <a href="http://iswebrtcready.appear.in/"</a>Check</p>
+
 
 </body>
 </html>
+
