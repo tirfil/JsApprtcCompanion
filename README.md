@@ -16,4 +16,9 @@ Need to use a browser compatible with webRTC.
 
 > node server.js (or nodejs server.js)
 
+![Screenshot](https://raw.githubusercontent.com/tirfil/JsApprtcCompanion/master/apprtc.png "Screenshot")
+
+
+
+
 
