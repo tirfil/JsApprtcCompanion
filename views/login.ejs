@@ -21,7 +21,7 @@ Please, enter your name:<br>
 <script>
 if (navigator.webkitGetUserMedia || navigator.mozGetUserMedia)  
 {  
-        //document.write("<p>Our browser supports webRTC</p>"); 
+        //document.write("<p>Your browser supports webRTC</p>"); 
         var node = document.getElementById("displayform");
         node.style.visibility="visible";
         node.style.height="auto";
@@ -30,7 +30,7 @@ else
 {  
         var node = document.getElementById("displayform");
         node.style.height="0";
-        document.write("<h1>Our browser <b>doesn't</b> support WebRTC technology.</h1>");
+        document.write("<h1>Your browser <b>doesn't</b> support WebRTC technology.</h1>");
         document.write("<h1>So, you cannot use this application.</h1>");
         document.write('<p><a href="http://caniuse.com/rtcpeerconnection">To show browsers compatibles with WebRTC technology</a></p>');
 }  
