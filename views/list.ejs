@@ -4,7 +4,7 @@
 <script>
 function connect(room)
 {
-    parent.frames[1].location.href = "https://apprtc.appspot.com/room/" + room;
+    parent.frames[1].location.href = "https://apprtc.appspot.com/r/" + room;
     window.document.location ="/list?name=<%= name %>&room=" + room;
 }
 function disconnect()
